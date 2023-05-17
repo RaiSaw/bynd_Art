@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Image, Box, Flex, VStack, Container, Text, HStack} from "@chakra-ui/react"
+import {Image, Box, Flex, VStack, Container, Text, HStack, Divider} from "@chakra-ui/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
@@ -32,7 +32,7 @@ const Footer = () => {
       left={0}
       right={0}
       margin='0 auto'
-      height={280}
+      height={300}
       bg='#edefee'
       alignContent='center'
       justifyContent='center'
@@ -82,6 +82,10 @@ const Footer = () => {
             </HStack>
           </VStack>
         </Flex>
+        <Box align='center' >
+          <Divider border='1px dashed #333'/>
+          <Text fontWeight={"medium"}>designed & developed by Rai S • © 2023</Text>
+        </Box>
         </footer>
         </Container>
         </Box>

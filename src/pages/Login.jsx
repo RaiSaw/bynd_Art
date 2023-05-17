@@ -214,7 +214,7 @@ const Login = () => {
           password: '',
           rememberMe: false
         }}
-        onSubmit={({resetForm}) => {
+        onSubmit={(values, {resetForm}) => {
           toast({
             title: 'Account created.',
             description: "We've created your account for you.",

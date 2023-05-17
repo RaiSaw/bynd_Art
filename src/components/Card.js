@@ -11,11 +11,11 @@ const Cardy = ({ title, imageSrc, alt, price, artist }) => {
         boxShadow='dark-lg'
         w='100%'
         overflow='hidden'
-        /*whileHover={{
+        whileHover={{
           scale: 1.2,
           transition: { duration: 2, ease:'backInOut' },
         }}
-        whileTap={{ scale: 1.2 }}*/
+        whileTap={{ scale: 1.2 }}
         >
           <Image className='image' src={imageSrc} w={250} height={250} objectFit='cover' alt={alt}/>
           <CardBody>

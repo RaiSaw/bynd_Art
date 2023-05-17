@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, HStack, Grid, VStack, Container, Heading, Button, Spacer, Text, Image} from '@chakra-ui/react';
+import { Flex, Box, HStack, VStack, Container, Heading, Button, Spacer, Text, Image} from '@chakra-ui/react';
 import Cardy from './Card'
 import Rev from './Rev'
 
