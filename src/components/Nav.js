@@ -50,26 +50,25 @@ import '../App.css';
         <Container maxWidth="1280px">
         <nav className="navbar" aria-label="main navigation">
         <Flex
-            px={16}
+            px={[8, 16, 20]}
             py={4}
-            justifyContent='space-evenly'
+            justify='space-between'
             fontSize={18}
             fontWeight={"bold"}
             fontFamily={"Karla"}
             bg="#7D0633"
-            justifyItems='center'
         >
           <Box overflow='hidden' borderRadius='full' boxShadow='dark-lg'>
             <Link to="/" className="logo"><Image className='image' src="./bynd.png" alt="Bynd Logo" boxSize="45px"/></Link>
           </Box>
-          <Hide below='md'>
+          <Hide below='sm'>
           <NavLink className="link" to='/' exact='true'>Home</NavLink>
           <NavLink className="link" to="/vr">VR</NavLink>
           <NavLink className="link" to="/ar">AR</NavLink>
           <NavLink className="link" to="/shop">Shop</NavLink>
           <NavLink className="link" to="/login">Login</NavLink>{/*onClick={onOpen} ref={navRef}*/}
           </Hide>
-          <Show below='md' >
+          <Show below='sm' >
             <Menu aria-label='menu' isLazy>
             {({ isOpen }) => (
               <>
@@ -84,6 +83,7 @@ import '../App.css';
                   _expanded={{ bg: '#FBDCC4'}}
                   _focus={{ boxShadow: 'outline' }}
                   isActive={isOpen}
+                  
                 >
                 {isOpen ? 'Close' : 'Open'}
                 </MenuButton>

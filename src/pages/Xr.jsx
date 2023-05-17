@@ -16,6 +16,7 @@ const Xr = () => {
       py={20}
       className='image'
       maxWidth={1280}
+      alt='endless doors gif'
         >
       </Box>
       </VStack>

@@ -8,6 +8,10 @@
   padding: 16px;
   justify-content: center;
   align-items: center;
+  scroll-behavior: smooth;
+}
+html{
+  background-color: #FBDCC4;
 }
 
 .imgCont{

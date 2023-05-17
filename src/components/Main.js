@@ -1,34 +1,38 @@
 import React from 'react'
-import { Flex, Box, VStack, Container, Heading, Button, Spacer, Text, Image} from '@chakra-ui/react';
+import { Flex, Box, HStack, Grid, VStack, Container, Heading, Button, Spacer, Text, Image} from '@chakra-ui/react';
 import Cardy from './Card'
 import Rev from './Rev'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const featured = [
 {
   getImageSrc: () => require("../images/img1.jpg"),
   title: "Aura",
-  alt:"Aura art"
+  alt:"Aura art",
+  artist:'Artist'
 },
 {
   getImageSrc: () => require("../images/pic8.jpg"),
   title: "Bloom",
-  alt:"Bloom art"
+  alt:"Bloom art",
+  artist:'Artist'
 },
 {
   getImageSrc: () => require("../images/pic2.jpg"),
   title: "Herbst",
-  alt:"Galaxy art"
+  alt:"Galaxy art",
+  artist:'Artist'
 },
 {
   getImageSrc: () => require("../images/pic5.jpg"),
   title: "Winter",
-  alt:"Winter art"
+  alt:"Winter art",
+  artist:'Artist'
 },
 {
   getImageSrc: () => require("../images/pic6.jpg"),
   title: "Wilderness",
-  alt:"Wilderness art"
+  alt:"Wilderness art",
+  artist:'Artist'
 }
 ]
 const reviews = [
@@ -61,12 +65,12 @@ const reviews = [
 export default function Home(){
   return (
     <>
-      <Box bg='#333'>{/*'#7D0633'*/}
+      <Box bg='#333'>
       <Container maxWidth="1280px" overflow='hidden' zIndex={-1}>
       <Box
           height={750}
           bg='url(img4.jpg)top/cover no-repeat'
-          w={['80%', '100%', '100%']}
+          w='100%'
           left={0}
           right={0}
           px={['8','10','12']}
@@ -97,24 +101,24 @@ export default function Home(){
           alignItems='center'
           maxWidth="1280px"
           height={750}
-          w={['80%', '100%', '100%']}
+          w='100%'
           left={0}
           right={0}
-          p={['4', '6', '12']}
+          p={['2', '6', '12']}
           justifyContent="space-between"
           >
         <VStack spacing={12}>
-          <Flex gap={20} px={12} alignSelf="flex-start" justifyContent="space-between">
-            <Heading as='h2' mr={20} fontFamily={'Karla'} fontWeight='extrabold' fontSize={['12','18','24']}>Featured Artworks</Heading>
+          <Flex gap={10} px={[2, 6, 12]} alignSelf="flex-start" justifyContent="space-between">
+            <Heading as='h2' fontFamily={'Karla'} fontWeight='extrabold' fontSize={['12','18','24']}>Featured Artworks</Heading>
           <Spacer/>
-            <Button as='a' ml={20} href='/shop' boxShadow='dark-lg' fontFamily={'Markazi Text'} alignSelf="flex-end" fontWeight='bold' fontSize={18} size={['sm','md','lg']} bg='#7D0633' color='#FBDCC4' rounded='15px'_hover={{bg:'#F2A07B', textColor:'#7D0633'}}>See all Artworks</Button>
+            <Button as='a'  href='/shop' boxShadow='dark-lg' fontFamily={'Markazi Text'} alignSelf="flex-end" fontWeight='bold' fontSize={18} size={['sm','md','lg']} bg='#7D0633' color='#FBDCC4' rounded='15px'_hover={{bg:'#F2A07B', textColor:'#7D0633'}}>See all Artworks</Button>
           </Flex>
           <Spacer/>
           <Box
           direction="row"
           display="grid"
           gridTemplateColumns="repeat(5,minmax(0,1fr))"
-          gridGap={8}
+          gridGap={[2, 4, 8]}
          >
             {featured.map((featured) => (
             <Cardy
@@ -122,6 +126,7 @@ export default function Home(){
               key={featured.title}
               title={featured.title}
               alt={featured.alt}
+              artist={featured.artist}
             />
             ))}
              </Box>
@@ -136,7 +141,7 @@ export default function Home(){
         height={750}
         left={0}
         right={0}
-        p={20}
+        p={[10, 16, 20]}
         justifyContent="center"
         alignContent='center'
         bg='#7D0633'
@@ -144,12 +149,12 @@ export default function Home(){
           <Container py={20} maxWidth="1280px">
           <Flex py={20} justifyContent="space-evenly" alignContent='center'>
             <VStack spacing={12} alignItems="flex-start" justifyContent="center">
-              <Heading as='h1' textShadow='0 0 2px #F2A07B' fontFamily={'Markazi Text'} fontSize={['40','50', '64']}fontWeight='medium' color='#FBDCC4'>Join our AR Quest</Heading>
-              <Text fontFamily={'Karla'} fontWeight='medium' fontSize={['8','12', '18']} lineHeight='1.5'>Explore, learn and play interactive games<br/>with digital artworks created by<br/>passionate artists.</Text>
+              <Heading as='h1' textShadow='0 0 2px #F2A07B' fontFamily={'Markazi Text'} fontSize={['36','50', '60']}fontWeight='medium' color='#FBDCC4'>Join our AR Quest</Heading>
+              <Text fontFamily={'Karla'} fontWeight='medium' fontSize={['12','16', '18']} lineHeight='1.5'>Explore, learn and play interactive games<br/>with digital artworks created by<br/>passionate artists.</Text>
               <Button as='a' href='/login' boxShadow='dark-lg' fontFamily={'Markazi Text'} justifySelf="space-between" fontWeight='bold' fontSize={18} size={['sm','md','lg']} bg='#F2A07B' color='#7D0633' rounded='15px'_hover={{bg:'#7D0633', textColor:'#FBDCC4', border:'1px solid #F2A07B'}} >Sign in</Button>
             </VStack>
-            <Box justifySelf='center' overflow='hidden' borderRadius='10px'>
-              <Image className='image' objectFit='cover' src="ar.jpg" alt="Art gallery image" boxSize={['100px','150px', '300px']} borderRadius='10px'/>
+            <Box justify='center' overflow='hidden' borderRadius='10px'>
+              <Image className='image' objectFit='cover' src="ar.jpg" alt="Art gallery image" boxSize={['90px','150px', '300px']} borderRadius='10px'/>
             </Box>
           </Flex>
           </Container>
@@ -162,24 +167,24 @@ export default function Home(){
         right={0}
         maxWidth="1280px"
         height={600}
-        w={['80%', '100%', '100%']}
-        p={['4', '6', '12']}
+        w='100%'
+        p={['null', '6', '12']}
         color='#333'
         justifyContent='space-between'
         alignItems='center'
         >
         <VStack spacing={12}>
-          <Flex gap={20} px={12} alignSelf="flex-start" justifyContent="space-between">
-            <Heading as='h2' mr={20} justify="center" alignItems="center" fontFamily={'Karla'} fontWeight='extrabold' fontSize={['16px', '18px', '24px']}>Testimonials</Heading>
+          <HStack gap={10} px={[2, 6, 12]} alignSelf="flex-start" justifyContent="space-between">
+            <Heading as='h2' justify="center" alignItems="center" fontFamily={'Karla'} fontWeight='extrabold' fontSize={['16px', '18px', '24px']}>Testimonials</Heading>
             <Spacer/>
-            <Button as='a' ml={20} href='/reviews' boxShadow='dark-lg' fontFamily={'Markazi Text'} justifySelf="center" fontWeight='bold' fontSize={18} size={['sm','md','lg']} bg='#7D0633' color='#FBDCC4' rounded='15px'_hover={{bg:'#F2A07B', textColor:'#7D0633'}}>See all reviews</Button>
-            </Flex>
+            <Button as='a' href='/reviews' boxShadow='dark-lg' fontFamily={'Markazi Text'} justifySelf="center" fontWeight='bold' fontSize={18} size={['sm','md','lg']} bg='#7D0633' color='#FBDCC4' rounded='15px'_hover={{bg:'#F2A07B', textColor:'#7D0633'}}>See all reviews</Button>
+          </HStack>
             <Spacer/>
             <Box
             direction="row"
-            display="grid"
+            display='grid'
             gridTemplateColumns="repeat(4,minmax(0,1fr))"
-            gridGap={['4', '6', '10']}
+            gridGap={['1', '4', '10']}
             borderRadius="xl"
             >
             {reviews.map(review => (

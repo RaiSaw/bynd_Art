@@ -28,7 +28,7 @@ const Footer = () => {
   return (
     <Box
       as="section"
-      w={['80%', '100%', '100%']}
+      w='100%'
       left={0}
       right={0}
       margin='0 auto'
@@ -55,7 +55,7 @@ const Footer = () => {
           gap={2}
           >
           <Box overflow='hidden' borderRadius='full' boxShadow='dark-lg'>
-          <Link to="/"><Image className='image' src="./bynd.png" alt="Logo" boxSize='200px'/></Link>
+          <Link to="/"><Image className='image' src="./bynd.png" alt="Logo" borderRadius='full' boxSize={['40px','80px','120px','180px']}/></Link>
           </Box>
           <VStack spacing={2} alignItems="flex-start">
             <Text fontWeight={"semibold"}>Navigation</Text>
@@ -73,7 +73,7 @@ const Footer = () => {
           </VStack>
           <VStack spacing={4} alignItems="flex-start">
             <Text fontWeight={'semibold'}>Socials</Text>
-            <HStack gap={2}>
+            <HStack gap={[null, 1, 2]}>
               {socials.map((social) =>(
                 <a key={social.url} href={social.url} rel='navicons'>
                   <FontAwesomeIcon  className='link2' icon={social.icon} color='black' size="2x"/>

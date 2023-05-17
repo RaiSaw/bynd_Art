@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Button, useToast, IconButton, Input, CloseButton, InputRightElement, Spacer, Heading, Text, Checkbox, DrawerOverlay, FormControl, FormLabel, FormErrorMessage, Divider, VStack, Box, Flex, HStack, useDisclosure, Drawer, DrawerContent, InputGroup } from "@chakra-ui/react";
+import {Card, Button, useToast, IconButton, Input, CloseButton, InputRightElement, Spacer, Heading, Text, Checkbox, DrawerOverlay, FormControl, FormLabel, FormErrorMessage, Divider, VStack, Box, Flex, HStack, useDisclosure, Drawer, DrawerContent, InputGroup } from "@chakra-ui/react";
 import {Formik, Field} from 'formik'
 import { ViewOffIcon, ViewIcon } from '@chakra-ui/icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -24,33 +24,36 @@ const accts = [
     url: "https://yahoo.com",
   }
 ]
+
 const Login = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [show, setShow] = useState(false)
   const handlePw = () => setShow(!show)
   const toast = useToast()
   return (
-    <Flex py={20} height={730} align='center' justify='center' bg='#FBDCC4'>
+    <Flex py={20} height={730} align='center' justify='center' w='full' bg='#FBDCC4'>
     <Box
+    as='section'
+    maxWidth="1280px"
+    left={0}
+    right={0}
+    p={8}
+    mt={20}
+    >
+    <Card
         className='login'
-        as='section'
         color="#333"
-        maxWidth="1280px"
-        left={0}
-        right={0}
-        p={12}
+        p={8}
         bg='white'
         rounded='xl'
-        w={500}
-        border= '1px solid #7D0633'
-        mt={20}
         boxShadow='dark-lg'
+        border= '1px solid #7D0633'
         >
         <VStack alignItems='flex-start' spacing={4}>
         <Flex justify='space-between'>
         <Heading fontWeight='bold' color='#7D0633'>Log in</Heading>
         <Spacer/>
-        <CloseButton size='md' ml={260}
+        <CloseButton size={[ 'sm', 'md', 'md']} ml={[50,100,260]}
         as='a'
         href='/'
         variant='ghost'
@@ -169,30 +172,31 @@ const Login = () => {
             closeOnOverlayClick={false}
             size='full'
             blockScrollOnMount={false}
-            maxWidth='1280px'
             >
             <DrawerOverlay />
             <DrawerContent>
-            <Flex py={20} width='full' height={780} align='center' justify='center' bg='#FBDCC4'>
-            <Box
-            className='signin'
-            as='section'
-            color="#333"
-            maxWidth="1280px"
-            left={0}
-            right={0}
-            p={12}
-            bg='white'
-            rounded='xl'
-            w='500'
-            border= '1px solid #7D0633'
-            boxShadow='dark-lg'
-            >
+            <Flex py={20} width='full' align='center' justify='center' bg='#FBDCC4'>
+              <Box
+              className='signup'
+              left={0}
+              right={0}
+              p={8}
+              color="#333"
+              maxWidth='1280px'
+              >
+              <Card
+              color="#333"
+              p={8}
+              bg='white'
+              rounded='xl'
+              boxShadow='dark-lg'
+              border= '1px solid #7D0633'
+              >
             <VStack alignItems='flex-start' spacing={4}>
             <Flex align='space-between'>
             <Heading fontWeight='bold' color='#7D0633'>Sign up</Heading>
             <Spacer/>
-            <CloseButton size='md' ml={260}
+            <CloseButton size={[ 'sm', 'md', 'md']} ml={[50,100,260]}
             as='a'
             href='/login'
             variant='ghost'
@@ -303,10 +307,12 @@ const Login = () => {
               ))}
             </HStack>
           </VStack>
+            </Card>
             </Box>
             </Flex>
             </DrawerContent>
             </Drawer>
+        </Card>
       </Box>
     </Flex>
   )
